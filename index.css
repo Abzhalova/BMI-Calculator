@@ -1,0 +1,832 @@
+/*--------------------------*/
+/*  Custom properties       */
+/*--------------------------*/
+:root{
+  /*  colors  */
+ --clr-blue: 227 92 58;
+ --clr-gunmetal: 215 31 21;
+ --clr-dark: 215 17 45;
+ --clr-white: 0 0 100;
+ --clr-light-blue: 203 92 95;
+
+   /*  typography --Heading*/
+ --sz-xl: clamp(3rem, 1.75rem + 4vw, 4rem);
+ --sz-l: 3rem;
+ --sz-m: 1.3rem;
+ --sz-s: 1.1rem;
+
+
+   /*  typography --body  */
+ --sz-p-m: 1rem; 
+ --sz-p-s: 0.9rem; 
+
+
+
+    /*  font family  */
+    --font-inter: "Inter", sans-serif;
+}
+
+@media (max-width: 950px){
+    :root{
+      
+      
+         /*  typography --Heading*/
+       --sz-xl: 3rem;
+      
+      
+      
+}
+
+}
+
+@media (max-width: 768px){
+    :root{
+      
+      
+         /*  typography --Heading*/
+       --sz-xl: 2rem;
+       --sz-l: 2rem;
+      
+      
+      
+}
+}
+
+
+
+
+/*--------------------------*/
+/*  Reset                   */
+/*--------------------------*/
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    color: hsl(var(--clr-dark));
+}
+
+
+
+/*  make images to use easier */
+
+
+image,
+picture{
+    width: 100px;
+    object-fit: cover;
+}
+
+/*  make from to use easier */
+
+input,
+button,
+textarea,
+option,
+select{
+    font: inherit;
+    outline: none;
+}
+
+section{
+    margin-bottom: 200px;
+}
+
+/* remove animations for people who ve turned them off */
+@media(prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*--------------------------*/
+/*  Utiliti classes         */
+/*--------------------------*/
+
+/*  general  */
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+
+
+/*  colors  */
+
+.cr-blue{
+    color: hsl(var(--clr-blue));
+}
+.cr-gunmetal{
+    color: hsl(var(--clr-gunmetal));
+}
+.cr-dark{
+    color: hsl(var(--clr-dark));
+}
+.cr-white{
+    color: hsl(var(--clr-white));
+}
+
+.bg-blue{
+    background-color: hsl(var(--clr-blue));
+}
+.bg-gunmetal{
+    background-color: hsl(var(--clr-gunmetal));
+}
+.bg-dark{
+    background-color: hsl(var(--clr-dark));
+}
+.bg-white{
+    background-color: hsl(var(--clr-white));
+}
+
+/* typography */
+
+.fs-xl{
+    font-size: var(--sz-xl);
+}
+.fs-l{
+    font-size: var(--sz-l);
+}
+.fs-m{
+    font-size: var(--sz-m);
+}
+.fs-s{
+    font-size: var(--sz-s);
+}
+
+.fs-p-m{
+    font-size: var(--sz-p-m);
+}
+.fs-p-s{
+    font-size: var(--sz-p-s);
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.line-height150{
+    line-height: 150%;
+}
+
+.line-height110{
+    line-height: 110%;
+}
+
+.letter-spacing{
+    letter-spacing: -5%;
+}
+
+.margin-top80{
+    margin-top: 80px;
+}
+
+.space-between-h1-p{
+    margin-top: 35px;
+}
+
+/*--------------------------*/
+/*  Components              */
+/*--------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: bold;
+    letter-spacing: -5%;
+    line-height: 110%;
+}
+
+nav{
+    padding: 96px 0;
+    justify-content: space-between;
+}
+
+.parnt-carts {
+    flex-wrap: wrap;
+    column-gap:  2rem;
+}
+
+.parnt-carts > * h4{
+    margin-bottom: 16px;
+}
+
+
+.card{
+    display: flex;
+    align-items: end;
+
+    width: 368px;
+    height: 128px;
+    border-radius: 8px;
+    padding: 24px;
+    
+    margin-bottom: 24px;
+    border: 1px solid #6C9AA3;
+
+}
+
+h2{
+    font-size: var(--sz-l);
+}
+
+span{
+    
+    color:  #6C9AA3;
+}
+
+.cr-code{
+   margin-top: 5px;
+}
+
+.cr-code > p{
+    margin-right: 15px;
+}
+
+
+/*   Typography  */
+
+.typo-blocks > *:first-child div{
+    width: 563px;
+    height: 175px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+
+.typo-blocks > *:first-child div:last-child{
+    padding: 32px;
+    margin-left: 32px;
+}
+
+.typo-blocks > *:first-child div:last-child p{
+    letter-spacing: 4px;
+    line-height: 185%;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.typo-lower-text{
+    text-transform: lowercase;
+    color: hsl(var(--clr-gunmetal));
+}
+
+/*  hr style  */
+
+hr{
+    margin: 16px 0;
+    background-color: #6C9AA3;
+    border: none;
+    height: 2px;
+}
+
+
+/*  article  */
+
+article{
+    margin-top: 56px;
+}
+
+.typo-blocks-second-block{
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.typo-blocks-second-block > *{
+    width: 50%;
+}
+
+/*    Interactive Components   */
+.form-content{
+    column-gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.form-content > *{
+    width: 50%;
+   
+}
+
+.form-content p{
+ margin-top: 16px
+}
+
+
+.text-input-block{
+    justify-content: space-between;
+    border: 1.5px solid #D8E2E7;
+    border-radius: 12px;
+    height: 69px;
+    width: fit-content;
+    padding-inline: 24px;
+    margin-top: 8px;
+}
+
+.text-input-block:active{
+    border-color: hsl(var(--clr-blue));
+}
+
+.text-input-block > *:first-child{
+    border-right: none;
+   border: none;
+    outline: none;
+    width: 70%;
+}
+
+.text-input-block > *:first-child::placeholder{
+    font-size: var(--sz-m);
+}
+
+.text-input-block > *:last-child{
+    width: inherit;
+    display: flex;
+    align-items: center;
+}
+
+
+.radio-input{
+    width: 25px;
+    height: 25px;
+   border-radius: 50%;
+   border: 3px solid #FFF;
+ 
+  margin-right: 15px;
+  padding-inline: 24px;
+  margin-top: 8px;
+ 
+}
+
+.radio-input:hover{
+    cursor: pointer;
+    outline: 1px solid hsl(var(--clr-blue));
+}
+
+/*--------------------------*/
+/*  LAYAUT PROJECT          */
+/*--------------------------*/
+
+/*  HOME  */
+
+#home{
+    position: relative;
+    padding: 78px;
+    
+}
+
+
+
+
+.home-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 115%;
+    background-color: rgba(214, 230, 254, 0.87);
+    background-image: linear-gradient(300deg, rgba(214, 230, 254, 0.87) 0%, rgba(214, 252, 254, 0.9) 50%, rgba(255, 255, 255, 1) 100%);
+ z-index: -1;
+ border-bottom-left-radius: 30px;
+ border-bottom-right-radius: 30px;
+}
+
+.home-content-blocks{
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.home-content-blocks > *{
+    width: 50%;
+   
+}
+
+.home-content-blocks > *:first-child h1{
+    margin-bottom: 35px;
+ 
+
+}
+
+.home-content-blocks > *:last-child{
+    -webkit-box-shadow: 8px 23px 90px 31px rgba(230, 231, 249, 1);
+-moz-box-shadow: 8px 23px 90px 31px rgba(230, 231, 249, 1);
+box-shadow: 8px 23px 90px 31px rgba(230, 231, 249, 1);
+ border-radius: 16px;
+    padding: 32px;
+    background-color: hsl(var(--clr-white));
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.radio-input-block{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.radio-input-block > *{
+  width: 50%;
+}
+
+.text-input-blocks{
+    display: flex;
+    gap: 1rem;
+}
+
+.borm-sum{
+padding: 32px;
+border-top-right-radius: 200px;
+border-bottom-right-radius: 200px;
+border-top-left-radius: 12px;
+border-bottom-left-radius: 12px;
+margin-top: 32px;
+}
+
+.borm-sum > *{
+ width: 50%;
+ margin-right: 24px;
+}
+
+.borm-sum > *:first-child h2{
+    margin-top: 8px;
+}
+
+/*--------------------------*/
+/*   BMI RESULT SECTION     */
+/*--------------------------*/
+
+#bmi-result{
+    position: relative;
+}
+
+.bmi-result-content{
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.bmi-result-content > *:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bmi-result-content > *{
+    width: 50%;
+}
+
+.bmi-result-bg-block{
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 564px;
+    height: 388px;
+    background-color: hsl(var(--clr-light-blue));
+    border-radius: 32px;
+}
+
+.line-in-result{
+    position: absolute;
+    right: 0;
+    top: -100px;
+   right: 250px;
+}
+
+
+
+/*   INFORMATION SECTION   */
+
+#info{
+    background-color: rgba(214, 230, 254, 0.53);
+    background-image: linear-gradient(153deg, rgba(214, 230, 254, 0.53) 100%, rgba(214, 246, 254, 0.75) 39%, rgba(214, 252, 254, 0.85) 0%);
+    padding: 70px;
+    border-radius: 35px;
+    margin-inline: 2rem;
+   
+}
+
+.info-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 4rem;
+}
+
+.info-content h3{
+    margin: 45px 0 30px 0;
+}
+
+
+
+/*   Limitations of BMI   */
+
+#limitation{
+    position: relative;
+}
+
+.lim-line{
+    position: absolute;
+    transform: rotate(140deg);
+    top: 200px;
+    left:  12%;
+    width: 60px;
+}
+
+.lim-content > *:first-child{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+    column-gap: 3rem;
+}
+
+.lim-content > *:first-child p{
+    margin-top: 16px;
+}
+
+.lim-content h1{
+    margin-bottom: 35px;
+}
+
+.lim-card{
+    width: 365px;
+}
+
+.lim-content > span{
+    margin-left: 10px;
+}
+
+.lim-content >*:last-child p{
+    margin-top: 16px;
+}
+
+.lim-cards{
+    -webkit-box-shadow: 8px 23px 90px 31px rgba(230, 231, 249, 1);
+    -moz-box-shadow: 8px 23px 90px 31px rgba(230, 231, 249, 1);
+    box-shadow: 8px 23px 90px 31px rgba(230, 231, 249, 1);
+     border-radius: 16px;
+        padding: 32px;
+        background-color: hsl(var(--clr-white));
+}
+
+.card-a{
+    grid-area: first-card;
+}
+.card-b{
+    grid-area: second-card;
+}
+.card-c{
+    grid-area: thid-card;
+}
+.card-d{
+    grid-area: forth-card;
+}
+
+
+.lim-cards-content{
+    display: grid;
+    grid-template-columns: repeat(7, 11.3%);
+    grid-template-rows: auto;
+    gap: 3%;
+    row-gap: 2rem;
+    grid-template-areas: 
+    ". first-card first-card first-card second-card second-card second-card"
+    "thid-card thid-card thid-card forth-card forth-card forth-card .";
+}
+
+.lim-content >*:last-child{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.lim-cards-content-gender{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  MEDIA  QUARY  */
+
+@media (max-width: 950px){
+    .bmi-result-content > *:first-child img{
+        width: 360px;
+        height: 411px;
+    }
+
+    
+    .bmi-result-bg-block{
+        width: 400px;
+        height: 299px;
+    }
+
+    .bmi-result-content >*:first-child{
+        align-items: flex-end;
+    }
+
+   .lim-line{
+    display: none;
+   }
+
+   .line-in-result{
+    display: none;
+}
+}
+
+
+@media (max-width: 768px) {
+
+    /*  HOME  */
+    .home-content-blocks{
+        flex-direction: column;
+      
+    }
+
+    .home-content-blocks > *{
+        width: 100%;
+    }
+
+    .home-content-blocks >*:first-child{
+        text-align: center;
+    }
+
+    .home-content-blocks >*:last-child{
+        margin-top: 40px;
+    }
+
+    .logo{
+       display: block;
+       margin: 0 auto;
+       margin-bottom: 40px;
+    }
+
+    .home-bg{
+        width: 100%;
+        height: 80%;
+    }
+    
+    /*  BMI RESULT  */
+
+    .bmi-result-content > *:first-child img{
+        width: 360px;
+        height: 411px;
+    }
+
+    .bmi-result-bg-block{
+        width: 400px;
+        height: 299px;
+    
+        left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .lim-card{
+        display: none;
+    }
+
+    .lim-cards-content-gender{
+        display: block;
+    }
+    
+    .lim-cards-content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .lim-cards{
+        margin-bottom: 2rem;
+        width: 48.5%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lim-content > *:first-child{
+        text-align: center;
+    }
+
+  
+}
+
+
+@media (max-width: 576px) {
+
+    .borm-sum{
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .borm-sum > *{
+        width: 100%;
+    }
+
+    .borm-sum  > * h2{
+        margin-bottom: 1rem;
+    }
+
+    .text-input-block{
+        width: 100%;
+        padding-inline: 10px;
+    }
+
+    .text-input-block > *:first-child{
+        width: 260%;
+    }
+
+    /*  BMI RESULT  */
+    .bmi-result-content{
+        flex-direction: column;
+    }
+
+    .bmi-result-content > *{
+        width: 100%;
+    }
+
+    .line-in-result{
+        display: none;
+    }
+
+    .bmi-result-content > *:first-child{
+        margin-bottom: 48px;
+    }
+
+    .bmi-result-bg-block{
+        width: 100%;
+        top: 112px;
+        border-top-left-radius:  32px;
+        border-bottom-left-radius:  32px;
+    }
+
+    section{
+        margin-bottom: 78px;
+    }
+
+    /*  INFO  */
+
+    #info{
+        padding-inline: 0;
+    }
+
+    /*   Limitations of BMI   */
+    
+    .lim-line{
+        display: none;
+    }
+
+    .lim-cards{
+        width: 100%;
+    }
+}
